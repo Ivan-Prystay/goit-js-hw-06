@@ -29,8 +29,26 @@ HTML містить список ul.gallery.
 */
 
 const galleryRef = document.querySelector(".gallery");
-
 galleryRef.classList.add("js-gallery");
+const headRef = document.querySelector("head");
+
+console.log("headRef: ", headRef);
+
+headRef.insertAdjacentHTML(
+  "beforeend",
+  `<style>
+.js-gallery {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+.js-gallery > li > img {
+  max-width: 80%;
+  border-radius: 50pt;
+  border: solid 2px #551a8b;
+}
+</style>`
+);
 
 const imagesRef = [];
 images.forEach((value, idx, arr) => {
