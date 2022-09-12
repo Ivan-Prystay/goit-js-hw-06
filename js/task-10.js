@@ -54,7 +54,10 @@ inputNumberRef.addEventListener("input", (event) => {
   }
 });
 
-//?        Дія кнопки <Create>          /
+inputNumberRef.addEventListener("focus", (event) => {
+  destroyBoxes();
+});
+
 createBtnRef.addEventListener("click", () => {
   createBoxes(nClick);
   clearInput();
