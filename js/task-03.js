@@ -32,8 +32,6 @@ const galleryRef = document.querySelector(".gallery");
 galleryRef.classList.add("js-gallery");
 const headRef = document.querySelector("head");
 
-console.log("headRef: ", headRef);
-
 headRef.insertAdjacentHTML(
   "beforeend",
   `<style>
@@ -59,4 +57,3 @@ images.forEach((value, idx, arr) => {
 });
 
 galleryRef.insertAdjacentHTML("afterbegin", imagesRef.join(""));
-console.log("galleryRef: ", galleryRef);
