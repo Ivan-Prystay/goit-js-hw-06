@@ -23,7 +23,6 @@ HTML містить список ul.gallery.
 Для створення розмітки використовуй шаблонні рядки і метод insertAdjacentHTML().
 
 Усі елементи галереї повинні додаватися в DOM за одну операцію додавання.
-
 Додай мінімальне оформлення галереї флексбоксами або грідами через CSS класи.
 
 */
@@ -48,12 +47,12 @@ headRef.insertAdjacentHTML(
 </style>`
 );
 
-const imagesRef = [];
-images.forEach((value, idx, arr) => {
+const imagesRef = images.map((value, idx, arr) => {
   const src = arr[idx]["url"];
   const alt = arr[idx]["alt"];
   const li = `<li><img src="${src}" alt="${alt}"></li>`;
-  imagesRef.push(li);
+  return li;
 });
 
+console.log("imagesRef: ", imagesRef);
 galleryRef.insertAdjacentHTML("afterbegin", imagesRef.join(""));

@@ -17,13 +17,12 @@ const ingredients = [
 
 */
 const ingredientsListRef = document.querySelector("#ingredients");
-const ingridientRef = [];
 
-ingredients.forEach((ingredient) => {
-  const li = document.createElement("li");
-  li.classList = "item";
-  li.textContent = ingredient;
-  return ingridientRef.push(li);
+const ingridientRef = ingredients.map((ingredient) => {
+  const liRef = document.createElement("li");
+  liRef.classList = "item";
+  liRef.textContent = ingredient;
+  return liRef;
 });
 
 ingredientsListRef.append(...ingridientRef);

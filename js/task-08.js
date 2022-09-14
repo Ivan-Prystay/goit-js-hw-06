@@ -5,6 +5,7 @@
 // Виведи об'єкт із введеними даними в консоль і очисти значення полів форми методом reset.
 
 const loginFormRef = document.querySelector(".login-form");
+
 loginFormRef.addEventListener("submit", handleSubmit);
 
 function handleSubmit(event) {
@@ -16,9 +17,13 @@ function handleSubmit(event) {
   if (email.value === "" || password.value === "") {
     return alert("Будь ласка 🙏, заповніть всі поля (📭 та 🔐)");
   }
-  console.log(
-    typeof `Email: ${email.value}, Password: ${password.value}`,
-    `Email: ${email.value}, Password: ${password.value}`
-  );
+  const user = { Email: email.value, Password: password.value };
+  console.log("user: ", user);
+
+  //console.log({ Email: email.value, Password: password.value });
+  // console.log(
+  //   typeof `Email: ${email.value}, Password: ${password.value}`,
+  //   `Email: ${email.value}, Password: ${password.value}`
+  // );
   event.currentTarget.reset();
 }
